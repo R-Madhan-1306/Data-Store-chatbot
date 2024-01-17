@@ -29,7 +29,3 @@ Route::get('/signup', [App\Http\Controllers\logincontroller::class, 'signup']);
 Route::post('/login', [App\Http\Controllers\logincontroller::class, 'login'])->name('login');
 Route::post('/signup', [App\Http\Controllers\logincontroller::class, 'register'])->name('signup');
 
-
-
-Route::get('/store', [App\Http\Controllers\ChatbotController::class, 'store']);
-Route::post('/store', [App\Http\Controllers\ChatbotController::class, 'storedata']);
