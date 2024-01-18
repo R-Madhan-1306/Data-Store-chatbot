@@ -26,13 +26,16 @@ class ChatbotController extends Controller
             ['user_id' => auth()->user()->id],
             [
                 'title' => $store_data['title'],
-                'content' => $store_data['title']
+                'content' => $store_data['content']
             ]
         );
         return redirect('/chatbot');
     }
-    public function store(){
-        dd('store');
+    public function list(){
+       $id=auth()->user()->id;
+       $data=Storage::where('user_id',$id)->get();
+       return view('show',compact('data'));
     }
+
 
 }

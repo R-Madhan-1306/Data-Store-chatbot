@@ -12,12 +12,11 @@
   </head>
   <body>
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#details">Profile</a></li>
+      <li><a href="/insert_form">Add</a></li>
+      <li><a href="#Show">Show</a></li>
       <li><a href="/logout">Logout</a></li>
-      <li><a>{{auth()->user()->username}}</a></li>
+      <li style="float:right"><a>{{auth()->user()->username}}</a></li>
     </ul>
     <!-- Chats container -->
     <div class="chat-container"></div>

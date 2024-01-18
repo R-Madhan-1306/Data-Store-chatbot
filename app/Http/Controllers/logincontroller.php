@@ -18,6 +18,10 @@ class logincontroller extends Controller
 
         return view('signup');
     }
+    public function add(Request $req){
+
+        return view('add');
+    }
     //
     public function login(Request $request){
 

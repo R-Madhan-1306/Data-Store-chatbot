@@ -24,6 +24,8 @@
                 </div>
                 <button type="submit" value="submit" class="btn btn-sm btn-primary mt-4">Submit</button>
             </form>
+            <p>
+            <div><span class="Register"><a href="/signup">Register Now</a></span></div></p>
         </div>
     </div>
 </div>
