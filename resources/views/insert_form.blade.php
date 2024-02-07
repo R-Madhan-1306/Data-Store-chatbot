@@ -30,7 +30,7 @@
 </head>
 <!-- body area started form here -->
     <ul>
-      <li><a href="/login">Back</a></li>
+      <li><a href="/profile">Back</a></li>
     </ul>
 <div class="container w-50 mt-5">
     <div class="card">
