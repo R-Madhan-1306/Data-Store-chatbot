@@ -2,6 +2,7 @@
 <head>
 <link rel="stylesheet" href="/asset/blog-home.css">
 <link rel="stylesheet" href="/asset/bootstrap.min.css">
+<link rel="shortcut icon" type="x-icon" href="/asset/logo.png">
 </head>
 
 

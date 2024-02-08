@@ -4,6 +4,7 @@
   <head>
     <meta charset="utf-8">
     <title>Data-Vault bot </title>
+    <link rel="shortcut icon" type="x-icon" href="/asset/logo.png">
     <link rel="stylesheet" href="/asset/style.css">
     <link rel='stylesheet' href='/asset/suggestion.css'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
