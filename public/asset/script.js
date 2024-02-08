@@ -45,8 +45,11 @@ const getChatResponse = async (incomingChatDiv) => {
         success: function (data) {
           
           pElement.textContent = data;
-         
-
+         if(data == "")
+         {
+            pElement.classList.add("error");
+            pElement.textContent = "Sorry, I don't know about that. Could you please rephrase?";
+         }
         }
     });
 
@@ -54,8 +57,10 @@ const getChatResponse = async (incomingChatDiv) => {
       
         
         pElement.textContent = userText;
-        
 
+        
+        
+        
       
     } catch (error) { // Add error class to the paragraph element and set error text
         pElement.classList.add("error");
