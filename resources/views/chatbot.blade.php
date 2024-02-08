@@ -15,7 +15,31 @@
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  
+  <style>
+            .typing-textarea {
+              position: relative;
+              display: inline-block;
+            }
+
+            .mycard {
+              /* display: none; */
+              position: absolute;
+              background-color: #3e404e;
+              width: auto;
+              overflow: auto;
+              bottom: 55px;
+              border: 1px  solid #ddd;
+              border-bottom: none;
+              z-index: 1;
+            }
+
+            .mycard h5 {
+              color: white;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+            }
+          </style>
   </head>
   <body>
     <ul>
@@ -29,16 +53,19 @@
     <div class="chat-container"></div>
     
     <!-- Typing container -->
+    
     <form action="{{asset('script.js')}}" method="post" autocomplete="off">
       @csrf
     <div class="typing-container">
+      
+         
+      
       <div class="typing-content">
+        
         <div class="typing-textarea">
         
-            <div class="mycard" style="width: 10rem; ">
-
-            </div>
-        
+          
+          <div class="mycard" ></div>  
           <textarea id="chat-input" name="promt" spellcheck="false" placeholder="Enter a Text here" required></textarea>
           <span id="send-btn" type="submit"  class="material-symbols-rounded">send</span>
         </div>
