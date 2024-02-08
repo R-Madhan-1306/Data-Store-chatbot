@@ -21,7 +21,7 @@ function loadDataFromLocalstorage() {
                             <p>Start a conversation and explore your data<br> Your chat history will be displayed here.</p>
                         </div>`;
 
-    chatContainer.innerHTML = localStorage.getItem("all-chats") || defaultText;
+    chatContainer.innerHTML =  defaultText;
     chatContainer.scrollTo(0, chatContainer.scrollHeight); // Scroll to bottom of the chat container
 }
 

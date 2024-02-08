@@ -41,44 +41,46 @@ class DataInsertController extends Controller
 
     public function search(Request $request)
     {
-        
-        if($request->ajax()) {
-            
-
-            $output = '';
-            if($request->search==null){
-                die;
-            }
-            
-            $id=auth()->user()->id;
-            $products = Storage::where('title', 'LIKE', '%'.$request->search.'%')
-                            
-                            ->get();
-            
-            
-            if($products) {
-
-                foreach($products as $product) {
-
-                    $output .=
-                    '<div class="card-body">
-                        <h5 class="card-title"><b>'.$product->title.'</b></h5>
-                  ';
-
+        // Check if the user is authenticated
+        if(auth()->check()) {
+            $userId = auth()->user()->id;
+    
+            if($request->ajax()) {
+                $output = '';
+                if($request->search == null){
+                    die;
                 }
-            }
-
+    
+                // Retrieve data related to the authenticated user's user_id
+                $products = Storage::where('user_id', $userId)
+                                    ->where('title', 'LIKE', '%'.$request->search.'%')
+                                    ->get();
+    
+                if($products) {
+                    foreach($products as $product) {
+                        $output .= '<div class="card-body">
+                                        <h5 class="card-title"><b>'.$product->title.'</b></h5>
+                                    </div>';
+                    }
+                }
+    
                 return response()->json($output);
-            
-            
-
+            }
+        } else {
+            // Return unauthorized response if the user is not authenticated
+            return response()->json(['error' => 'Unauthorized'], 401);
         }
+    }
+    
 
         // return view('chatbot');
 
-    }
+    
     public function searchshow(Request $request)
     {
+        if(auth()->check()) {
+            $userId = auth()->user()->id;
+        
         
         if($request->ajax()) {
             
@@ -89,8 +91,10 @@ class DataInsertController extends Controller
             }
             
             
-            $products = Storage::where('title', 'LIKE', '%'.$request->search.'%')
+            $products = Storage::where('user_id', $userId)
+                            ->where('title', 'LIKE', '%'.$request->search.'%')
                             ->select('content')
+                            ->limit(1)
                             ->get();
             
             
@@ -109,13 +113,10 @@ class DataInsertController extends Controller
             
 
         }
-
+    }
         // return view('chatbot');
 
     }
-
-
-
 
 
 
